@@ -1,0 +1,10 @@
+﻿<Window x:Class="JsonTester.ErrorMsg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ErrorMsg" Height="244" Width="300" Foreground="#FFBBBBBB">
+    <Grid Background="#FF292929">
+        <Button Content="확인" HorizontalAlignment="Left" Margin="107,161,0,0" VerticalAlignment="Center" Width="75" Background="#FF252526" Foreground="#FF999999" Click="OnBtOk"/>
+        <TextBox x:Name="mErrorMsg" HorizontalAlignment="Left" Height="162" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="272" Background="#FF252526" Foreground="#FFFBFAFA"/>
+
+    </Grid>
+</Window>

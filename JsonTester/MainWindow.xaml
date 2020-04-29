@@ -1,0 +1,27 @@
+﻿<Window xmlns:JsonTester="clr-namespace:JsonTester"  x:Class="JsonTester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="615" Width="1173.343" Initialized="Initialize_Tester" Closing="OnBtClose">
+    <Grid Background="#FF3E3D3D">
+        <TextBlock HorizontalAlignment="Left" Margin="448,21,0,0" TextWrapping="Wrap" Text="IP:" VerticalAlignment="Top" Foreground="#FFC9C7C7"/>
+        <TreeView x:Name="sendTree"  HorizontalAlignment="Left" Height="477" Margin="10,97,0,0" VerticalAlignment="Top" Width="502" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <TreeView x:Name="recvTree"  HorizontalAlignment="Left" Height="477" Margin="523,97,0,0" VerticalAlignment="Top" Width="401" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <TextBox x:Name="addrIP" HorizontalAlignment="Left" Height="23" Margin="466,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <TextBlock HorizontalAlignment="Left" Margin="591,21,0,0" TextWrapping="Wrap" Text="Port:" VerticalAlignment="Top" Foreground="#FFC9C7C7"/>
+        <TextBox x:Name="port" HorizontalAlignment="Left" Height="23" Margin="621,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <Button Style="{StaticResource MyBlackBT}" Content="Refresh" HorizontalAlignment="Left" Margin="144,19,0,0" VerticalAlignment="Top" Width="75" Click="OnBtGetJson"/>
+        <Button x:Name="mBtSend" Style="{StaticResource MyBlackBT}" Content="Send" HorizontalAlignment="Left" Margin="138,72,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden" Click="OnBtSendJson"/>
+        <ComboBox x:Name="JsonCombo" HorizontalAlignment="Left" Margin="13,19,0,0" VerticalAlignment="Top" Width="120" IsEditable="True"
+                  SelectionChanged="JsonCombo_SelectionChanged"/>
+        <Button x:Name="mBtConnect" Style="{StaticResource MyBlackBT}" Content="Connect" HorizontalAlignment="Left" Margin="666,48,0,0" VerticalAlignment="Top" Width="75" Click="OnBtConnet" />
+        <Button Style="{StaticResource MyBlackBT}" Content="Edit" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="41" Click="EditJson" />
+        <Button Style="{StaticResource MyBlackBT}" Content="Add" HorizontalAlignment="Left" Margin="56,72,0,0" VerticalAlignment="Top" Width="41" Click="AddJson" />
+        <Button Style="{StaticResource MyBlackBT}" Content="Del" HorizontalAlignment="Left" Margin="102,72,0,0" VerticalAlignment="Top" Width="31"/>
+        <TextBlock HorizontalAlignment="Left" Margin="448,51,0,0" TextWrapping="Wrap" Text="P.S.:" VerticalAlignment="Top" Foreground="#FFC9C7C7" RenderTransformOrigin="4.082,1.128"/>
+        <TextBlock HorizontalAlignment="Left" Margin="523,51,0,0" TextWrapping="Wrap" Text="P.E.:" VerticalAlignment="Top" Foreground="#FFC9C7C7" RenderTransformOrigin="4.082,1.128"/>
+        <TextBox x:Name="mPacketEnd" HorizontalAlignment="Left" Height="23" Margin="549,50,0,0" TextWrapping="Wrap" Text="03" VerticalAlignment="Top" Width="40" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <TextBox x:Name="mPacketStart" HorizontalAlignment="Left" Height="23" Margin="472,50,0,0" TextWrapping="Wrap" Text="02" VerticalAlignment="Top" Width="40" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <ListBox x:Name="mReiciveHistory" HorizontalAlignment="Left" Height="455" Margin="929,119,0,0" VerticalAlignment="Top" Width="226"  Foreground="Yellow" Background="#FF1E1E1E" SelectionChanged="MakeReiciveTreeView"/>
+        <TextBlock HorizontalAlignment="Left" Margin="929,97,0,0" TextWrapping="Wrap" Text="History(Reicive)" VerticalAlignment="Top" Foreground="#FFE4E4E4"/>
+    </Grid>
+</Window>
