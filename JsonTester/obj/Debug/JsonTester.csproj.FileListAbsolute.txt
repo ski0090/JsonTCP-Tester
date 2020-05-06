@@ -3,10 +3,8 @@ D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.exe
 D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.pdb
 D:\Person_git\JsonTCP-Tester\JsonTester\bin\Newtonsoft.Json.dll
 D:\Person_git\JsonTCP-Tester\JsonTester\bin\Newtonsoft.Json.xml
-D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\ErrorMsg.baml
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\MyTheme.baml
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\App.baml
-D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\ErrorMsg.g.cs
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\MainWindow.g.cs
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\App.g.cs
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester_MarkupCompile.cache
@@ -18,3 +16,8 @@ D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.csproj.GenerateReso
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.exe
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.pdb
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.csprojResolveAssemblyReference.cache
+D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.exe.manifest
+D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.application
+D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.TrustInfo.xml
+D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.exe.manifest
+D:\Person_git\JsonTCP-Tester\JsonTester\obj\Debug\JsonTester.application

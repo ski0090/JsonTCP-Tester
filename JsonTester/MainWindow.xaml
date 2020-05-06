@@ -17,11 +17,15 @@
         <Button Style="{StaticResource MyBlackBT}" Content="Edit" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="41" Click="EditJson" />
         <Button Style="{StaticResource MyBlackBT}" Content="Add" HorizontalAlignment="Left" Margin="56,72,0,0" VerticalAlignment="Top" Width="41" Click="AddJson" />
         <Button Style="{StaticResource MyBlackBT}" Content="Del" HorizontalAlignment="Left" Margin="102,72,0,0" VerticalAlignment="Top" Width="31"/>
-        <TextBlock HorizontalAlignment="Left" Margin="448,51,0,0" TextWrapping="Wrap" Text="P.S.:" VerticalAlignment="Top" Foreground="#FFC9C7C7" RenderTransformOrigin="4.082,1.128"/>
-        <TextBlock HorizontalAlignment="Left" Margin="523,51,0,0" TextWrapping="Wrap" Text="P.E.:" VerticalAlignment="Top" Foreground="#FFC9C7C7" RenderTransformOrigin="4.082,1.128"/>
-        <TextBox x:Name="mPacketEnd" HorizontalAlignment="Left" Height="23" Margin="549,50,0,0" TextWrapping="Wrap" Text="03" VerticalAlignment="Top" Width="40" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
+        <TextBlock HorizontalAlignment="Left" Margin="440,51,0,0" TextWrapping="Wrap" Text="STX :" VerticalAlignment="Top" Foreground="#FFC9C7C7" RenderTransformOrigin="4.082,1.128"/>
+        <TextBlock HorizontalAlignment="Left" Margin="523,51,0,0" TextWrapping="Wrap" Text="ETX :" VerticalAlignment="Top" Foreground="#FFC9C7C7" RenderTransformOrigin="4.082,1.128"/>
+        <TextBox x:Name="mPacketEnd" HorizontalAlignment="Left" Height="23" Margin="555,50,0,0" TextWrapping="Wrap" Text="03" VerticalAlignment="Top" Width="40" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
         <TextBox x:Name="mPacketStart" HorizontalAlignment="Left" Height="23" Margin="472,50,0,0" TextWrapping="Wrap" Text="02" VerticalAlignment="Top" Width="40" PreviewTextInput="NumberOnly" BorderBrush="{x:Null}" Foreground="Yellow" Background="#FF1E1E1E"/>
-        <ListBox x:Name="mReiciveHistory" HorizontalAlignment="Left" Height="455" Margin="929,119,0,0" VerticalAlignment="Top" Width="226"  Foreground="Yellow" Background="#FF1E1E1E" SelectionChanged="MakeReiciveTreeView"/>
+        <ListBox x:Name="mReiciveHistory" HorizontalAlignment="Right" Height="455" Margin="0,119,0,0" VerticalAlignment="Top" Width="241"  Foreground="Yellow" Background="#FF1E1E1E" SelectionChanged="MakeReiciveTreeView"/>
         <TextBlock HorizontalAlignment="Left" Margin="929,97,0,0" TextWrapping="Wrap" Text="History(Reicive)" VerticalAlignment="Top" Foreground="#FFE4E4E4"/>
+        <Canvas x:Name="ErrMsg" HorizontalAlignment="Left" Height="574" Margin="10,0,0,0" VerticalAlignment="Top" Width="1145" Background="#FF535353" Opacity="0.6" Visibility="Hidden">
+            <TextBlock x:Name="ErrText" Canvas.Left="342" Canvas.Top="104" Width="500" Height="304" Foreground="#FFFBE71E" Background="Black" Text="Example" />
+            <Button Width="97" Height="26" Canvas.Left="514" Canvas.Top="413" Content="확인" Click="OnBtErrOk" />
+        </Canvas>
     </Grid>
 </Window>

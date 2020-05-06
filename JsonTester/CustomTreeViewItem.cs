@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 namespace JsonTester
@@ -170,7 +171,13 @@ namespace JsonTester
                 }
                 catch (Exception e)
                 {
-                    ErrorMsg.ErrorMessage(e.Message);
+                    strEle = new TextBox();
+                    strEle.Text = _element;
+                    strEle.Background = Brushes.DarkSlateGray;
+                    strEle.Foreground = Brushes.LightGray;
+                    stack.Children.Add(strEle);
+
+                    MessageBox.Show(e.Message);
                 }
             }
             else

@@ -25,7 +25,7 @@ namespace JsonTester.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("02")]
         public string startPacket {
             get {
                 return ((string)(this["startPacket"]));
@@ -37,7 +37,7 @@ namespace JsonTester.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("03")]
         public string endPacket {
             get {
                 return ((string)(this["endPacket"]));
@@ -49,13 +49,25 @@ namespace JsonTester.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2203")]
         public string portNumber {
             get {
                 return ((string)(this["portNumber"]));
             }
             set {
                 this["portNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string ipAddress {
+            get {
+                return ((string)(this["ipAddress"]));
+            }
+            set {
+                this["ipAddress"] = value;
             }
         }
     }

@@ -1,8 +1,6 @@
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\JsonTester.csprojResolveAssemblyReference.cache
-D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\ErrorMsg.baml
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\MyTheme.baml
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\App.baml
-D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\ErrorMsg.g.cs
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\MainWindow.g.cs
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\App.g.cs
 D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\JsonTester_MarkupCompile.cache
@@ -18,3 +16,8 @@ D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.exe
 D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.pdb
 D:\Person_git\JsonTCP-Tester\JsonTester\bin\Newtonsoft.Json.dll
 D:\Person_git\JsonTCP-Tester\JsonTester\bin\Newtonsoft.Json.xml
+D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.exe.manifest
+D:\Person_git\JsonTCP-Tester\JsonTester\bin\JsonTester.application
+D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\JsonTester.TrustInfo.xml
+D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\JsonTester.exe.manifest
+D:\Person_git\JsonTCP-Tester\JsonTester\obj\Release\JsonTester.application

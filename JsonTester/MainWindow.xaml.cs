@@ -25,6 +25,11 @@ namespace JsonTester
         Dictionary<string, string> mapJsonPath = new Dictionary<string, string>();
         Encoding eucKr = Encoding.GetEncoding("euc-kr");
         Thread reiciveThread=null;
+        public void ErrorMsg(string strMsg)
+        {
+            ErrText.Text = strMsg;
+            ErrMsg.Visibility = Visibility.Visible;
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +37,7 @@ namespace JsonTester
 
         private void Initialize_Tester(object sender, EventArgs e)
         {
-            addrIP.Text = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1].ToString();
+            addrIP.Text = Properties.Settings.Default.ipAddress;
             mPacketStart.Text = Properties.Settings.Default.startPacket;
             mPacketEnd.Text = Properties.Settings.Default.endPacket;
             port.Text = Properties.Settings.Default.portNumber;
@@ -57,9 +62,9 @@ namespace JsonTester
                     connectBtn.Content = "Disconnect";
                     mBtSend.Visibility = Visibility.Visible;
                 }
-                catch
+                catch (Exception error)
                 {
-                    ErrorMsg.ErrorMessage("연결 실패");
+                    MessageBox.Show(error.Message);
                 }
             }
             else
@@ -103,10 +108,9 @@ namespace JsonTester
                 var strJson = File.ReadAllText(strPath);
                 UpdateTreeView(sendTree, strJson);
             }
-            catch
+            catch (Exception error)
             {
-                ErrorMsg.ErrorMessage("Json 구문 오류..");
-                return;
+                MessageBox.Show(error.Message);
             }
         }
         private TreeViewItem MakeTreeItems(object item,int iIndex=-1)
@@ -176,9 +180,10 @@ namespace JsonTester
                 TreeJsonItem _node = sendTree.Items[0] as TreeJsonItem;
                 retJson = _node.MakeJson();
             }
-            catch
+            catch (Exception e)
             {
-                ErrorMsg.ErrorMessage("Send 할 내용이 없습니다.");
+                ErrText.Text = "Send 할 내용이 없습니다.";
+                ErrMsg.Visibility = Visibility.Visible;
             }
             return retJson;
         }
@@ -244,7 +249,7 @@ namespace JsonTester
 
             }
            catch(Exception e){
-            ErrorMsg.ErrorMessage(e.Message);
+               MessageBox.Show(e.Message);
            }
            return;
              
@@ -261,6 +266,7 @@ namespace JsonTester
             Properties.Settings.Default.startPacket = mPacketStart.Text;
             Properties.Settings.Default.endPacket = mPacketEnd.Text;
             Properties.Settings.Default.portNumber = port.Text;
+            Properties.Settings.Default.ipAddress = addrIP.Text;
 
             Properties.Settings.Default.Save();
         }
@@ -277,8 +283,9 @@ namespace JsonTester
                 {
                     recvLen = mSocket.GetStream().Read(recvBuffer, 0, 5);
                 }
-                catch
+                catch (Exception e)
                 {
+                    MessageBox.Show(e.Message);
                     return;
                 }
                 if (recvLen == 0)
@@ -293,13 +300,15 @@ namespace JsonTester
                 }
                 bufferLength = BitConverter.ToInt32(recvBuffer, 1);
 
-                byte[] recbJsonBuffer = new Byte[bufferLength];
+                byte[] recvJsonBuffer = new Byte[bufferLength];
+                int offset = 0;
                 while (0 != bufferLength)
                 {
-                    recvLen = mSocket.GetStream().Read(recbJsonBuffer, 0, bufferLength);
+                    recvLen = mSocket.GetStream().Read(recvJsonBuffer, offset, bufferLength);
+                    offset += recvLen;
                     bufferLength -= recvLen;
                 }
-                string recvJson = eucKr.GetString(recbJsonBuffer);
+                string recvJson = eucKr.GetString(recvJsonBuffer);
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     mReiciveHistory.SelectedIndex = mReiciveHistory.Items.Add(recvJson);
@@ -314,6 +323,11 @@ namespace JsonTester
 
             string recvJson = mReiciveHistory.Items[mReiciveHistory.SelectedIndex].ToString();
             UpdateTreeView(recvTree, recvJson); 
+        }
+
+        private void OnBtErrOk(object sender, RoutedEventArgs e)
+        {
+            ErrMsg.Visibility = Visibility.Hidden;
         }
     }
 
